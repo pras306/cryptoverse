@@ -1,70 +1,161 @@
-# Getting Started with Create React App
+# Cryptoverse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Cryptoverse](src/assets/images/cryptoverse.png)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### Table of Contents
 
-### `npm start`
+- [Description](#description)
+- [How To Use](#how-to-use)
+- [API References](#api-references)
+- [License](#license)
+- [Author Info](#author-info)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Description
 
-### `npm test`
+This is a cryptocurrency web app that lists information about popular cryptocurrency coins including their prices, related news articles and other information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Technologies
 
-### `npm run build`
+- React JS
+- Redux Toolkit
+- React Chart JS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Back To The Top](#cryptoverse)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How To Use
 
-### `npm run eject`
+The website is published at [Cryptoverse]()
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the project 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  git clone https://github.com/pras306/cryptoverse.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Go to the project directory
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+  cd cryptoverse
+```
 
-## Learn More
+Install dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start the server
 
-### Code Splitting
+```bash
+  npm run start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## API References
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Coinranking Rapid API](https://rapidapi.com/Coinranking/api/coinranking1)
+- [Bing News Search Rapid API](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1)
+- Custom Proxy Server for hiding API key - [https://backend-portfolio-proxy.herokuapp.com/api/v1](https://backend-portfolio-proxy.herokuapp.com/api/v1)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### GET coins
 
-### Advanced Configuration
+```http
+  GET /coinranking/coins?limit=${limit}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Parameter   | Type     | Description                                                  |
+| :---------- | :------- | :----------------------------------------------------------- |
+| `limit`     | `number` | **Required**. the limit for different crypto coins           |
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[Back To The Top](#cryptoverse)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### GET coin
+
+```http
+  GET /coinranking/coin/${coinId}
+```
+
+| Parameter   | Type     | Description                                                  |
+| :---------- | :------- | :----------------------------------------------------------- |
+| `coinId`    | `number` | **Required**. the UUID of the coin you want to request       |
+
+
+[Back To The Top](#cryptoverse)
+
+
+#### GET coin price history
+
+```http
+  GET /coinranking/coin/${coinId}/history?timePeriod=${timePeriod}
+```
+
+| Parameter    | Type     | Description                                                        |
+| :----------  | :------- | :----------------------------------------------------------------- |
+| `coinId`     | `number` | **Required**. the UUID of the coin you want to request             |
+| `timePeriod` | `number` | **Required**. Timeperiod where the change and history are based on |
+
+
+[Back To The Top](#cryptoverse)
+
+
+#### GET news search
+
+```http
+  GET /bingnewssearch/news/search?q=${searchTerm}&count=${count}
+```
+
+| Parameter     | Type     | Description                                                      |
+| :-----------  | :------- | :--------------------------------------------------------------- |
+| `searchTerm`  | `string` | **Required**. the query string for user's search                 |
+| `count`       | `number` | **Required**. the number of news articles to return in search    |
+
+
+[Back To The Top](#cryptoverse)
+
+---
+
+## License
+
+MIT License
+
+Copyright (c) [2021] [Prasanna Sriram]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[Back To The Top](#cryptoverse)
+
+---
+
+## Author Info
+
+- Github - [pras306](https://github.com/pras306)
+- LinkedIn - [Prasanna Sriram](https://www.linkedin.com/in/prasanna-sriram/)
+- Portfolio - [Personal Portfolio](https://prasanna-sriram.netlify.app/)
+
+[Back To The Top](#cryptoverse)
