@@ -30,7 +30,7 @@ This is a cryptocurrency web app that lists information about popular cryptocurr
 
 ## How To Use
 
-The website is published at [Cryptoverse]()
+The website is published at [Cryptoverse](https://cryptocoins-app.netlify.app)
 
 Clone the project 
 
