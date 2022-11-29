@@ -2,7 +2,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 
-const baseUrl = process.env.NODE_ENV === "production" ? "https://backend-portfolio-proxy.herokuapp.com/api/v1/bingnewssearch" : "http://localhost:5000/api/v1/bingnewssearch";
+const baseUrl = process.env.NODE_ENV === "production" ? "https://api-proxy-server.up.railway.app/api/v1/bingnewssearch" : "http://localhost:5000/api/v1/bingnewssearch";
 
 const createRequest = (url) => ({ url });
 
