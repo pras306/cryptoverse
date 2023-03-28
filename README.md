@@ -62,7 +62,7 @@ Start the server
 
 - [Coinranking Rapid API](https://rapidapi.com/Coinranking/api/coinranking1)
 - [Bing News Search Rapid API](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1)
-- Custom Proxy Server for hiding API key - [https://api-proxy-server.up.railway.app/api/v1](https://api-proxy-server.up.railway.app/api/v1)
+- Custom Proxy Server for hiding API key - [https://api-proxy-server-6xbe.onrender.com/api/v1](https://api-proxy-server-6xbe.onrender.com/api/v1)
 
 
 #### GET coins
