@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 
-const baseUrl = process.env.NODE_ENV === "production" ? "https://api-proxy-server.up.railway.app/api/v1/coinranking" : "http://localhost:5000/api/v1/coinranking";
+const baseUrl = process.env.NODE_ENV === "production" ? "https://api-proxy-server-6xbe.onrender.com/api/v1/coinranking" : "http://localhost:5000/api/v1/coinranking";
 
 const createRequest = (url) => ({ url });
 
